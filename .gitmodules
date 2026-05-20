@@ -1,0 +1,9 @@
+[submodule "boom_stop"]
+	path = boom_stop
+	url = https://github.com/Shuiliusheng/boom_stop.git
+[submodule "boom-dev"]
+	path = boom-dev
+	url = https://github.com/chensx00/boom-perf-dev.git
+[submodule "vivado-risc-v-dev"]
+	path = vivado-risc-v-dev
+	url = https://github.com/chensx00/vivado-risc-v-boom.git
