@@ -14,17 +14,38 @@
 
 ## 贡献者
 
-- 陈克发 MPRC23级硕士:
-  - https://github.com/chensx00/vivado-risc-v-boom 的 57ce6e3, a3793b3 和 f08637c 提交基于陈克发的原仓库 https://github.com/ckf104/vivado-risc-v/commits/update-boom/ 中的 3adca8d 提交以及之前的提交进行修改.
-  - https://github.com/chensx00/boom-perf-dev.git 的 f63d22b 基于陈克发的原仓库 https://github.com/ckf104/boom-dev.git 中的 81836ff 提交以及之前的提交进行修改.
-
 - 崔宏伟 MPRC17级博士:
   - https://github.com/Shuiliusheng/boom_stop.git
   - 提供了 boom 性能计数器的早期版本以及一系列配套测试工具
 
+- 陈克发 MPRC23级硕士:
+  - 修改 vivado-risc-v 以匹配 chipyard1.13.0 版本下的 riscv-boom.
+  - https://github.com/chensx00/vivado-risc-v-boom 的 57ce6e3, a3793b3 和 f08637c 提交基于陈克发的原仓库 https://github.com/ckf104/vivado-risc-v/commits/update-boom/ 中的 3adca8d 提交以及之前的提交进行修改.
+  - https://github.com/chensx00/boom-perf-dev.git 的 f63d22b 基于陈克发的原仓库 https://github.com/ckf104/boom-dev.git 中的 81836ff 提交以及之前的提交进行修改.
+
+- 袁茵 MPRC23级博士:
+  - 整理收集了 boom-stop 和 陈克发的 vivado-risc-v 的代码版本.
+  - 验证了比特流烧录和开发板上的性能测试程序运行.
+
+- 陈绪银 MPRC24级硕士:
+  - 对以上代码进行比特流生成验证.
+  - 验证了比特流烧录和开发板上的性能测试程序运行.
+
+- 谢鸿博 MPRC24级硕士:
+  - 对以上代码进行比特流生成验证.
+  - 验证了比特流烧录和开发板上的性能测试程序运行.
+
+- 李俊浩 MPRC24级硕士:
+  - 对以上代码进行比特流生成验证.
+  - 验证了比特流烧录和开发板上的性能测试程序运行.
+
+- 陈仕轩 MPRC24级博士:
+  - 整理以上贡献.
+
+
 ## 环境配置
 
-该文档目前添加了 vivado, java11, firtool 工具的安装和支持
+该文档目前添加了 vivado, java11, firtool 工具的安装和支持.
 
 ~~~bash
 # WORK_SPACE 设置为项目根目录
@@ -36,7 +57,7 @@ export WORK_SPACE=$(pwd)
 
 若使用实验室的 23 服务器, 服务器内 vivado 版本为 2021.1. 可以跳过该部分文档.
 
-首先下载 vivado, 建议版本2021.1~2025.1. (本文档验证2025.1 版本 vivado 通过全流程)
+首先下载 vivado, 建议版本2021.1~2025.1. (本文档验证2025.1 版本 vivado 通过全流程).
 
 vivado 的 license 可以在实验室 23 服务器中的 `~/.flexlmrc` 找到路径, vivado 需要该 license 来支持 genesys2 开发板.
 
@@ -85,7 +106,7 @@ export FIRRTL=$WORK_SPACE/lib/firtool-1.62.0/bin/firtool
 
 ## 生成比特流步骤
 
-首先环境配置完毕
+首先环境配置完毕.
 
 ### 比特流生成
 
@@ -115,12 +136,12 @@ make CONFIG=Rocket64x1 BOARD=genesys2 bitstream -j512
 
 ### 其他命令
 
-比特流的生成目录
+比特流的生成目录:
 ~~~bash
 cp $WORK_SPACE/vivado-risc-v-dev/workspace/Rocket64x1/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper.bit $WORK_SPACE/my_bitstream.bit
 ~~~
 
-完全清理工作目录
+完全清理工作目录:
 ~~~bash
 rm -rf $WORK_SPACE/vivado-risc-v-dev/workspace/Rocket64x1
 ~~~
