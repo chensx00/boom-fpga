@@ -24,7 +24,8 @@
   - https://github.com/chensx00/boom-perf-dev.git 的 f63d22b 基于陈克发的原仓库 https://github.com/ckf104/boom-dev.git 中的 81836ff 提交以及之前的提交进行修改.
 
 - 袁茵 MPRC23级博士:
-  - 整理收集了 boom-stop 和 陈克发的 vivado-risc-v 的代码版本.
+  - 整理收集了 boom-stop 和 陈克发的 vivado-risc-v 的代码版本
+  - 对以上代码进行比特流生成验证.
   - 验证了比特流烧录和开发板上的性能测试程序运行.
 
 - 陈绪银 MPRC24级硕士:
