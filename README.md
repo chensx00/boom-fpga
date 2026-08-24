@@ -149,7 +149,7 @@ rm -rf $WORK_SPACE/vivado-risc-v-dev/workspace/Rocket64x1
 
 ## 测试程序编译
 
-以下所有测试程序的编译均需要编译工具“riscv64-unknown-linux-gnu-gc”, 可以选择使用已有的chipyard环境中的工具链.
+以下所有测试程序的编译均需要编译工具“riscv64-unknown-linux-gnu-gcc”, 可以选择使用已有的chipyard环境中的工具链.
 
 ### boom-stop 计数器使用方式
 
@@ -157,14 +157,14 @@ rm -rf $WORK_SPACE/vivado-risc-v-dev/workspace/Rocket64x1
 
 ### CoreMark
 
-进入官方 coremark 仓库并编译 riscv 可执行文件.
+进入官方 coremark 仓库并编译 RISC-V 可执行文件.
 
 ~~~bash
 cd coremark
 make PORT_DIR=linux CC=riscv64-unknown-linux-gnu-gcc XCFLAGS="-O2 -static" REBUILD=1 EXE=.riscv compile
 ~~~
 
-生成Linux版本可执行文件`coremark/coremark.riscv`
+生成 RISC-V 版本可执行文件`coremark/coremark.riscv`
 
 ### Dhrystone
 
@@ -175,4 +175,4 @@ cd benchmark-dhrystone
 make CC=riscv64-unknown-linux-gnu-gcc XCFLAGS="-static -DDHRY_ITERS=5000000"
 ~~~
 
-生成Linux版本可执行文件`benchmark-dhrystone/dhrystone`
+生成 RISC-V 版本可执行文件`benchmark-dhrystone/dhrystone`
