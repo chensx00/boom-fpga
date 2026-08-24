@@ -111,6 +111,8 @@ export FIRRTL=$WORK_SPACE/lib/firtool-1.62.0/bin/firtool
 
 ### 比特流生成
 
+#### 拉取子仓库和更换BOOM源代码
+
 ~~~bash
 cd $WORK_SPACE
 # 拉取子仓库
@@ -125,7 +127,20 @@ mv vivado-risc-v-dev/generators/riscv-boom vivado-risc-v-dev/generators/riscv-bo
 ln -s ../../boom-dev/ ./vivado-risc-v-dev/generators/riscv-boom
 # 软链接删除方式
 # rm vivado-risc-v-dev/generators/riscv-boom # 不要用 rm -r !
+~~~
 
+#### V7板子补丁
+
+如果要在V7 FPGA上烧录比特流，需要在拉取所有子仓库和BOOM代码换源后执行以下代码打补丁
+
+~~~bash
+# 打补丁支持 V7 FPGA板子
+bash $WORK_SPACE/apply_v7dual_patch.sh
+~~~
+
+#### 正式生成比特流
+
+~~~bash
 # 启用你自己的 vivado 环境
 source /your_vivado_root/Vivado/settings64.sh
 # source /home/chenshixuan/sw/Xilinx/2025.1/Vivado/settings64.sh
@@ -133,6 +148,8 @@ source /your_vivado_root/Vivado/settings64.sh
 # 开始生成比特流
 cd $WORK_SPACE/vivado-risc-v-dev
 make CONFIG=Rocket64x1 BOARD=genesys2 bitstream -j512
+# V7 FPGA 生成 MEGA 单核配置
+make CONFIG=Rocket64z1 BOARD=dualv7 bitstream -j512
 ~~~
 
 ### 其他命令

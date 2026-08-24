@@ -1,0 +1,4 @@
+XILINX_PART ?= xc7v2000tflg1925-1
+CFG_DEVICE  ?= SPIx4 -size 32
+CFG_PART    ?= w25q32fv-spi-x1_x2_x4
+MEMORY_SIZE ?= 0x40000000
